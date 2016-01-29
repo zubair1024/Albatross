@@ -1,0 +1,15 @@
+#loginDialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+}
+
+.input-field{
+    color:#000000;
+}
+
+body{
+    background: url("../images/bg.jpg") no-repeat;
+    background-size: 100%;
+}
