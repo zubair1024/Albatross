@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= title %></title>
+    <title>SIM</title>
     <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
 
     <!--bootstrap css-->
@@ -47,11 +47,11 @@
                 url: 'http://localhost:3000/logon',
                 type: "POST",
                 data: {
-                    'username': 'zubair',
-                    'password': 'zubair'
+                    'username': $('#email').val(),
+                    'password': $('#password').val()
                 },
                 success: function (res) {
-                    console.log(res);
+                    window.location.pathname = '/dashboard';
                 },
                 error: function (err) {
                     console.log(err);

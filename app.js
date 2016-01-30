@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var login = require('./routes/login');
 var users = require('./routes/users');
+var dashboard = require('./routes/dashboard');
 
 var db = require('./services/db');
 var app = express();
@@ -36,24 +37,43 @@ app.use(cookieParser());
 app.use(expressSession({
     secret: process.env.SESSION_SECRET || 'secret',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: {maxAge: 1200000}
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new passportLocal.Strategy({
+passport.use('local-login', new passportLocal.Strategy({
     usernameField: 'username',
-    passwordField: 'password'
-}, function (username, password, done) {
-    //Use a real DB
-    console.log(username);
-    console.log(password);
-    if (username === password) {
-        done(null, {id: 123, name: username});
-    } else {
-        done(null, null);
-    }
+    passwordField: 'password',
+    passReqToCallback: true // allows us to pass back the entire request to the callback
+}, function (req, username, password, done) {
+    var dbObj = db.createConn();
+    dbObj.conn.connect(function (err) {
+        if (err) {
+            console.log('error');
+            console.log(err);
+        } else {
+            dbObj.request.query('select * from SIMUser where USERNAME=\'' + username + '\' and PASS=\'' + password + '\'', function (err, recordset) {
+                if (err) {
+                    done(null, null);
+                } else {
+                    if (recordset.length) {
+                        done(null, {id: 123, name: username});
+                    } else {
+                        done(null, null);
+                    }
+                }
+                dbObj.conn.close();
+            });
+        }
+    });
+    //if (username === password) {
+    //    done(null, {id: 123, name: username});
+    //} else {
+    //    done(null, null);
+    //}
 }));
 
 passport.serializeUser(function (user, done) {
@@ -62,23 +82,32 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(function (id, done) {
-    console.log('deserial');
-    done({id: id, name: id});
+    console.log('deserializeUser');
+    done(null, {id: id, name: id});
 });
 
-app.post('/logon', passport.authenticate('local'), function (req, res, next) {
+app.post('/logon', passport.authenticate('local-login'), function (req, res, next) {
     if (req.isAuthenticated()) {
-        res.send('Success');
+        //res.redirect('/dashboard');
+        //res.send('/dashboard');
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,    Accept");
+        res.status('success').json({"data": 'success'})
     }
 });
+
 
 /**
  * Playground for passport
  */
 app.use('/', routes);
 app.use('/users', users);
-app.use('/asset', users);
 app.use('/login', login);
+app.use('/dashboard', dashboard);
+
+/**
+ * Set up routing
+ */
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -107,7 +136,7 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
-        error: {}
+        error: err
     });
 });
 
