@@ -3,10 +3,6 @@
 <head>
     <title>SIM</title>
     <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
-
-    <!--bootstrap css-->
-    <!--<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">-->
-    <!--<link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="/stylesheets/materialize.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
 
@@ -44,8 +40,9 @@
         $('#logIn').click(function () {
             $.ajax({
                 dataType: "json",
-                url: 'http://localhost:3000/logon',
+                url: 'http://192.168.168.9:3000/logon',
                 type: "POST",
+                crossDomain: true
                 data: {
                     'username': $('#email').val(),
                     'password': $('#password').val()

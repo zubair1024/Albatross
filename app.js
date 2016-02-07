@@ -11,7 +11,7 @@ var login = require('./routes/login');
 var users = require('./routes/users');
 var dashboard = require('./routes/dashboard');
 
-var db = require('./services/db');
+//var db = require('./services/db');
 var app = express();
 
 // view engine setup
@@ -49,31 +49,31 @@ passport.use('local-login', new passportLocal.Strategy({
     passwordField: 'password',
     passReqToCallback: true // allows us to pass back the entire request to the callback
 }, function (req, username, password, done) {
-    var dbObj = db.createConn();
-    dbObj.conn.connect(function (err) {
-        if (err) {
-            console.log('error');
-            console.log(err);
-        } else {
-            dbObj.request.query('select * from SIMUser where USERNAME=\'' + username + '\' and PASS=\'' + password + '\'', function (err, recordset) {
-                if (err) {
-                    done(null, null);
-                } else {
-                    if (recordset.length) {
-                        done(null, {id: 123, name: username});
-                    } else {
-                        done(null, null);
-                    }
-                }
-                dbObj.conn.close();
-            });
-        }
-    });
-    //if (username === password) {
-    //    done(null, {id: 123, name: username});
-    //} else {
-    //    done(null, null);
-    //}
+    //var dbObj = db.createConn();
+    //dbObj.conn.connect(function (err) {
+    //    if (err) {
+    //        console.log('error');
+    //        console.log(err);
+    //    } else {
+    //        dbObj.request.query('select * from SIMUser where USERNAME=\'' + username + '\' and PASS=\'' + password + '\'', function (err, recordset) {
+    //            if (err) {
+    //                done(null, null);
+    //            } else {
+    //                if (recordset.length) {
+    //                    done(null, {id: 123, name: username});
+    //                } else {
+    //                    done(null, null);
+    //                }
+    //            }
+    //            dbObj.conn.close();
+    //        });
+    //    }
+    //});
+    if (username === password) {
+        done(null, {id: 123, name: username});
+    } else {
+        done(null, null);
+    }
 }));
 
 passport.serializeUser(function (user, done) {
