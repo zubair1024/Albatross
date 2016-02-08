@@ -9,10 +9,10 @@ db = {};
  * @type {{user: string, password: string, server: string, database: string, port: number}}
  */
 db.config = {
-    user: 'action',
-    password: 'action229',
-    server: '127.0.0.1', // You can use 'localhost\\instance' to connect to named instance
-    database: 'ACTIONROAM',
+    user: 'sa',
+    password: 'sa229',
+    server: 'localhost', // You can use 'localhost\\instance' to connect to named instance
+    database: 'SIM',
     port: 1433
     //options: {
     //  encrypt: true // Use this if you're on Windows Azure
