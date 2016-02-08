@@ -92,7 +92,7 @@ app.post('/logon', passport.authenticate('local-login'), function (req, res, nex
         //res.send('/dashboard');
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,    Accept");
-        res.status('success').json({"data": 'success'})
+        res.status('success').json({"data": 'success'});
     }
 });
 

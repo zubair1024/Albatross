@@ -40,7 +40,7 @@
         $('#logIn').click(function () {
             $.ajax({
                 dataType: "json",
-                url: 'http://192.168.168.9:3000/logon',
+                url: window.location + 'logon',
                 type: "POST",
                 crossDomain: true,
                 data: {
