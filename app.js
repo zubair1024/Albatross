@@ -104,7 +104,6 @@ app.post('/logon', passport.authenticate('local-login'), function (req, res, nex
  * Playground for passport
  */
 app.use('/', routes);
-app.use('/users', users);
 app.use('/login', login);
 app.use('/dashboard', dashboard);
 
