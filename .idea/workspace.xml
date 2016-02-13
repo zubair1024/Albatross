@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c9a4c709-b5b0-462a-ba85-55cdfaafd6a2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.ejs" afterPath="$PROJECT_DIR$/views/login.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/register.ejs" afterPath="$PROJECT_DIR$/views/register.ejs" />
     </list>
     <ignored path="SIM.iws" />
@@ -118,8 +117,8 @@
       <file leaf-file-name="register.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.552">
+              <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -405,7 +404,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455391016445</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="* Routing the registration page">
+      <created>1455391151807</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1455391151807</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -457,7 +462,8 @@
     <MESSAGE value="Correcting a small flaw and deploying" />
     <MESSAGE value="* Adding a 404 page with better error handling&#10;* CSS and JS imports" />
     <MESSAGE value="* Adding theme&#10;* Creating a registration page" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Adding theme&#10;* Creating a registration page" />
+    <MESSAGE value="* Routing the registration page" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Routing the registration page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -841,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.552">
+          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
           <folding />
         </state>
       </provider>
