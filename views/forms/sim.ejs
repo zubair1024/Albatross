@@ -1,0 +1,60 @@
+<% include ../templates/header.ejs %>
+<div class="col s12 m10 l6">
+    <div class="card-panel">
+        <h4 class="header2">Upload SIM Card Details:</h4>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="John Doe" id="imei" type="text">
+                        <label for="imei" class="active">SIM IMEI</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="john@domainname.com" id="number" type="email">
+                        <label for="number" class="active">SIM Number</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="john@domainname.com" id="subscriber" type="email">
+                        <label for="subscriber" class="active">Subscriber ID</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="john@domainname.com" id="provider" type="email">
+                        <label for="provider" class="active">Provider</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="john@domainname.com" id="contract_plan" type="email">
+                        <label for="contract_plan" class="active">Contract Plan</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="john@domainname.com" id="activation_date" type="email">
+                        <label for="activation_date" class="active">SIM Activation Date</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea placeholder="Place the remarks here..." id="message2" class="materialize-textarea"></textarea>
+                        <label for="message" class="active">Message</label>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                                <i class="mdi-content-send right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<% include ../templates/header.ejs %>
