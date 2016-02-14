@@ -61,26 +61,129 @@
     <div class="col s12 m8 l8">
         <div class="card">
             <div class="card-content white-text">
-                <div id="container" style="min-width: 310px; margin: 0 auto"></div>
+                <div id="line" style="min-width: 310px; margin: 0 auto"></div>
             </div>
             <div class="card-action">
-                <a href="#" class="grey-text text-accent-1">This is a link</a>
-                <a href="#" class="grey-text text-accent-1">This is a link</a>
+                <!--<a href="#" class="grey-text text-accent-1">This is a link</a>-->
+                <!--<a href="#" class="grey-text text-accent-1">This is a link</a>-->
             </div>
         </div>
     </div>
 
-    <div class="col s12 m4 14">
+    <div class="col s12 m4 18">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
             </div>
             <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4"><i class="mdi-navigation-more-vert right"></i></span>
-                <div id="pie" style="min-width: 310px; margin: 0 auto"></div>
+                <div id="pie" style="min-width: 290px; margin: 0 auto"></div>
             </div>
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                <span class="card-title grey-text text-darken-4"><i class="mdi-navigation-close right"></i></span>
+                <table class="striped">
+                    <thead>
+                    <tr>
+                        <th data-field="id">Blah</th>
+                        <th data-field="name">Blah</th>
+                        <th data-field="price">Blah</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                    </tr>
+                    <tr>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                    </tr>
+                    <tr>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                    </tr>
+                    <tr>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                    </tr>
+                    <tr>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                    </tr>
+                    <tr>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                    </tr>
+                    <tr>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                        <td>Blah</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m12 22">
+        <div class="card">
+            <div class="card-content black-text">
+                    <table class="striped">
+                        <thead>
+                        <tr>
+                            <th data-field="id">Blah</th>
+                            <th data-field="name">Blah</th>
+                            <th data-field="price">Blah</th>
+                            <th data-field="price">Blah</th>
+                            <th data-field="price">Blah</th>
+                            <th data-field="price">Blah</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                        </tr>
+                        <tr>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                        </tr>
+                        <tr>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                        </tr>
+                        <tr>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                            <td>Blah</td>
+                        </tr>
+                        </tbody>
+                    </table>
+            </div>
+            <div class="card-action">
+                <!--<a href="#" class="grey-text text-accent-1">This is a link</a>-->
+                <!--<a href="#" class="grey-text text-accent-1">This is a link</a>-->
             </div>
         </div>
     </div>
@@ -88,10 +191,13 @@
 <% include ./templates/footer.ejs %>
 <script type="text/javascript">
     $(function () {
-        $('#container').highcharts({
+        $('#line').highcharts({
             title: {
                 text: 'Monthly Average Temperature',
                 x: -20 //center
+            },
+            credits: {
+                enabled: false
             },
             subtitle: {
                 text: 'Source: WorldClimate.com',
@@ -143,6 +249,9 @@
                     beta: 0
                 }
             },
+            credits: {
+                enabled: false
+            },
             title: {
                 text: 'Browser market shares at a specific website, 2014'
             },
@@ -176,6 +285,67 @@
                     ['Opera', 6.2],
                     ['Others', 0.7]
                 ]
+            }]
+        });
+        $('#bar').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Historic World Population by Region'
+            },
+            subtitle: {
+                text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
+            },
+            xAxis: {
+                categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Population (millions)',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' millions'
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -40,
+                y: 80,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'Year 1800',
+                data: [107, 31, 635, 203, 2]
+            }, {
+                name: 'Year 1900',
+                data: [133, 156, 947, 408, 6]
+            }, {
+                name: 'Year 2012',
+                data: [1052, 954, 4250, 740, 38]
             }]
         });
     });
