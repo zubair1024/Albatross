@@ -6,5 +6,6 @@
  * Initialize an application structure
  */
 var App = {
+    baseUrl: null,
     component: {}
 };

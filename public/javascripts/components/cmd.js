@@ -21,7 +21,7 @@ App.component.Cmd = function () {
      */
     var loginUser = function () {
         $.ajax({
-            url: window.location + 'logon',
+            url: App.baseUrl + '/logon',
             data: {
                 'username': $('#email').val(),
                 'password': $('#password').val()
