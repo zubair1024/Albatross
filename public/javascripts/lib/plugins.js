@@ -4,7 +4,7 @@ $(function () {
 
     var window_width = $(window).width();
 
-    $('body').addClass('loaded');
+
     //$(window).load(function() {
     //  setTimeout(function() {
     //    $('body').addClass('loaded');

@@ -4,7 +4,7 @@
 
 App.component.Dashboard = function () {
     console.log('Dashboard component initialized');
-    
+
     $('#line').highcharts({
         title: {
             text: 'Monthly Average Temperature',
@@ -162,4 +162,5 @@ App.component.Dashboard = function () {
             data: [1052, 954, 4250, 740, 38]
         }]
     });
+    $('body').addClass('loaded');
 };
