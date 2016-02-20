@@ -1,14 +1,11 @@
 <!-- Lib Files-->
+<% if(version && version == 'prod'){ %>
+<script type="text/javascript" src="/build/app.js"></script>
+<% }else{ %>
 <script type="text/javascript" src="/javascripts/lib/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="/javascripts/lib/materialize.min.js"></script>
 <script type="text/javascript" src="/javascripts/lib/prism.js"></script>
 <script type="text/javascript" src="/javascripts/lib/perfect-scrollbar.min.js"></script>
-
-<% if(title == 'Dashboard'){ %>
-<script type="text/javascript" src="/javascripts/lib/highcharts.js"></script>
-<script type="text/javascript" src="/javascripts/lib/exporting.js"></script>
-<script type="text/javascript" src="/javascripts/lib/plugins.js"></script>
-<% } %>
 
 <!-- Intialization files -->
 <script type="text/javascript" src="/javascripts/init.js"></script>
@@ -21,3 +18,10 @@
 <!-- Run Files-->
 <script type="text/javascript" src="/javascripts/router.js"></script>
 <script type="text/javascript" src="/javascripts/run.js"></script>
+
+<% } %>
+<% if(title == 'Dashboard'){ %>
+<script type="text/javascript" src="/javascripts/lib/highcharts.js"></script>
+<script type="text/javascript" src="/javascripts/lib/exporting.js"></script>
+<script type="text/javascript" src="/javascripts/lib/plugins.js"></script>
+<% } %>

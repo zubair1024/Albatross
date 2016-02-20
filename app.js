@@ -26,6 +26,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.locals.version = process.argv.slice(2)[0];
+
 /**
  * Playground for passport
  */
