@@ -1,5 +1,10 @@
+<% console.log(version); %>
+<% if(version && version == 'prod'){ %>
+<link href="/build/app.css" type="text/css" rel="stylesheet" media="screen,projection">
+<% } else{ %>
 <link href="/stylesheets/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
 <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
 <link href="/stylesheets/theme.css" type="text/css" rel="stylesheet" media="screen,projection">
 <link href="/stylesheets/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
 <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
+<% } %>
