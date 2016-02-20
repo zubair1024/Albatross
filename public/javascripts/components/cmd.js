@@ -40,12 +40,12 @@ App.component.Cmd = function () {
      * Install handlers
      */
     var installHandlers = function () {
-        /**
-         * Login a given user
-         */
+        //login a give user
         $('#logIn').click(function () {
             loginUser();
         });
+        //Navigation button
+        $(".button-collapse").sideNav();
     };
 
     installHandlers();
