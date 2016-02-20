@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SIM</title>
+    <title><%= title %></title>
     <link href="/stylesheets/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
     <% include ./templates/css-imports.ejs %>
 </head>
@@ -39,28 +39,6 @@
         </div>
     </div>
     <% include ./templates/js-imports.ejs %>
-    <script type="text/javascript">
-        $('#logIn').click(function () {
-            $.ajax({
-                dataType: "json",
-                url: window.location + 'logon',
-                type: "POST",
-                crossDomain: true,
-                data: {
-                    'username': $('#email').val(),
-                    'password': $('#password').val()
-                },
-                success: function (res) {
-                    window.location.pathname = '/dashboard';
-                },
-                error: function (err) {
-                    console.log(err);
-                    $('html').html(err.responseText);
-                }
-            });
-        });
-
-    </script>
 </div>
 </body>
 </html>

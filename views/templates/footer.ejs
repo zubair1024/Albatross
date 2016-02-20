@@ -40,12 +40,18 @@
         </div>
     </div>
 </footer>
-<% include ./js-imports.ejs %>
-<script type="text/javascript">
-    $(document).ready(function () {
-        Materialize.toast('Welcome!', 1000, 'rounded');
-        $(".button-collapse").sideNav();
-    });
+<script>
+    /**
+     * Using the title for the router's purpose
+     */
+    window.location.hash= document.title;
 </script>
+<% include ./js-imports.ejs %>
+<!--<script type="text/javascript">-->
+    <!--$(document).ready(function () {-->
+        <!--Materialize.toast('Welcome!', 1000, 'rounded');-->
+        <!--$(".button-collapse").sideNav();-->
+    <!--});-->
+<!--</script>-->
 </body>
 </html>

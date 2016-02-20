@@ -5,9 +5,9 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
     if (req.isAuthenticated()) {
-        res.render('dashboard', {user: 'Zubair'});
+        res.render('dashboard', {title:'Dashboard'});
     } else {
-        res.render('login');
+        res.render('login', { title: 'Login' });
     }
 });
 

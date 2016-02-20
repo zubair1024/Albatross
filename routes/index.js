@@ -4,19 +4,19 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
     if (req.isAuthenticated()) {
-        res.render('dashboard', {title: ''});
+        res.render('dashboard', {title: 'Dashboard'});
     } else {
-        res.render('login', {title: 'Sim Inventory Management'});
+        res.render('login', {title: 'Login'});
     }
 });
 
 router.get('/register', function (req, res, next) {
-    res.render('register', {title: 'Register'});
+    res.render('register', {title: 'Registration'});
 });
 
 router.get('/sim', function (req, res, next) {
     if (req.isAuthenticated()) {
-        res.render('forms/sim', {title: 'SIM Panel'});
+        res.render('forms/sim', {title: 'Sim Panel'});
     } else {
         res.render('login');
     }
